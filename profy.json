@@ -1,0 +1,67 @@
+{
+  "$schema": "https://profy.ai/schema/profy.json",
+  "name": "My App",
+  "type": "app",
+  "version": "1.0.0",
+  "slug": "my-app",
+  "framework": "nextjs",
+
+  "marketplace": {
+    "category": "productivity",
+    "tags": ["keyword1", "keyword2"],
+    "description": "A brief description of your app (50-500 characters)",
+    "icon": "./assets/icon.png",
+    "overview": "./overview.md"
+  },
+
+  "billing": {
+    "type": "PER_CALL",
+    "freeTrialPerUser": 3,
+    "rules": [
+      {
+        "path": "/api/run",
+        "type": "PER_CALL",
+        "amount": 10,
+        "name": "单次运行"
+      },
+      {
+        "path": "/api/chat",
+        "type": "PER_TOKEN",
+        "name": "AI 对话"
+      }
+    ]
+  },
+
+  "platform": {
+    "baseUrl": "https://profy-test.agentspro.cn",
+    "appSecret": "",
+    "appUuid": ""
+  },
+
+  "deploy": {
+    "mode": "k8s",
+    "replicas": 1,
+    "platform": "linux/amd64"
+  },
+
+  "build": {
+    "command": "npm run build",
+    "outputDir": ".next",
+    "installCommand": "npm install",
+    "nodeVersion": "20"
+  },
+
+  "runtime": {
+    "memory": 256,
+    "maxInstances": 1,
+    "timeout": 30,
+    "healthCheck": "/api/health"
+  },
+
+  "env": {
+    "OPENAI_API_KEY": {
+      "required": true,
+      "description": "OpenAI API key"
+    }
+  }
+}
