@@ -42,7 +42,7 @@ Complete field reference with all available options:
 
 ```json
 {
-  "$schema": "https://profy.ai/schema/profy.json",
+  "$schema": "https://profy-test.agentspro.cn/schema/profy.json",
   "name": "My App",
   "type": "app",
   "version": "1.0.0",
