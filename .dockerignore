@@ -1,9 +1,0 @@
-node_modules
-.next
-.git
-.env*
-!.env.local.example
-!.env.prod
-!.env.prod.example
-*.md
-.profy
