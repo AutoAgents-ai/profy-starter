@@ -4,32 +4,16 @@
   "type": "app",
   "version": "1.0.0",
   "slug": "my-app",
-  "framework": "nextjs",
+  "framework": "vite",
 
   "marketplace": {
     "category": "productivity",
-    "tags": ["keyword1", "keyword2"],
-    "description": "A brief description of your app (50-500 characters)",
-    "icon": "./assets/icon.png",
-    "overview": "./overview.md"
+    "tags": [],
+    "description": "A brief description of your app (50-500 characters)"
   },
 
   "billing": {
-    "type": "PER_CALL",
-    "freeTrialPerUser": 3,
-    "rules": [
-      {
-        "path": "/api/run",
-        "type": "PER_CALL",
-        "amount": 10,
-        "name": "单次运行"
-      },
-      {
-        "path": "/api/chat",
-        "type": "PER_TOKEN",
-        "name": "AI 对话"
-      }
-    ]
+    "type": "FREE"
   },
 
   "platform": {
@@ -38,30 +22,15 @@
     "appUuid": ""
   },
 
-  "deploy": {
-    "mode": "k8s",
-    "replicas": 1,
-    "platform": "linux/amd64"
-  },
-
   "build": {
     "command": "npm run build",
-    "outputDir": ".next",
-    "installCommand": "npm install",
-    "nodeVersion": "20"
+    "outputDir": "dist",
+    "installCommand": "npm install"
   },
 
   "runtime": {
-    "memory": 256,
+    "memory": 128,
     "maxInstances": 1,
-    "timeout": 30,
-    "healthCheck": "/api/health"
-  },
-
-  "env": {
-    "OPENAI_API_KEY": {
-      "required": true,
-      "description": "OpenAI API key"
-    }
+    "timeout": 30
   }
 }

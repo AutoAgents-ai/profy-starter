@@ -1,6 +1,4 @@
-"use client";
-
-export default function HomePage() {
+export default function App() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#fafaf9]">
       <div className="w-full max-w-lg space-y-6 p-8">
@@ -11,7 +9,7 @@ export default function HomePage() {
           <p className="mt-2 text-sm leading-6 text-gray-500">
             Start building your application here. Edit{" "}
             <code className="rounded bg-gray-100 px-1.5 py-0.5 text-xs font-mono">
-              src/app/page.tsx
+              src/App.tsx
             </code>{" "}
             to customize this page.
           </p>
